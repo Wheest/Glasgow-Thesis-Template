@@ -1,7 +1,7 @@
 % =============================================================================
 % Glasgow University thesis format, following as closely as possible:
 % http://theses.gla.ac.uk/gettingstarted/format.html#layout
-% 
+%
 % =============================================================================
 \NeedsTeXFormat{LaTeX2e}
 % \ProvidesClass{thesis}[%
@@ -36,11 +36,6 @@
 % Fonts.
 % Times New Roman for the body.
 \usepackage{times}
-% The guidelines state Arial for the headings. Really. Helvetica is
-% close enough.
-\usepackage{sectsty}
-\usepackage{helvet}
-\allsectionsfont{\sffamily}
 
 % Set paragraph layout.
 \setlength{\parindent}{0pt}
@@ -66,12 +61,12 @@
 
 % The default side margin is 1" + whatever is set here. 1" == 2.54cm.
 % To meet the 4.0cm of 1.5cm margin + 2.5cm gutter:
-% 
+%
 % On odd pages, the side margin must be set to 1.46cm. (i.e., the
 % default value of 2.54cm + an additional 1.46cm to achieve the 1.5cm
 % margin + 2.5cm gutter.)
 %\oddsidemargin 1.46cm
-% 
+%
 % On even pages, the gutter is on the opposing side, to the side
 % margin is set to -1.04cm (i.e., the default value of 2.54cm - the
 % 1.04cm required to achieve the 1.5cm margin.)
