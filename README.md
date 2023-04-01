@@ -90,7 +90,9 @@ My workflow is Overleaf based, so I don't need the makefile, YMMV.  On Overleaf,
 
 <!-- Changelog -->
 ### Changelog:
-- Made new main file 00-main.tex (numbered files are much easier to navigate, especially in a structured document).
+- Made new main file `00-main.tex` (numbered files are much easier to navigate, especially in a structured document).
 - Removed sans-serif headings. There are no guidelines that I can find for CSE that say this is required, BS 5848:1980 does not mention this.  In addition, [the template given by CSE](https://www.gla.ac.uk/colleges/scienceengineering/graduateschool/postgraduateresearchstudy/submitthesis/) has serif headings.
 - Changed bibliography style from IEEEtran, as guidelines say "preferably following the Vancouver system or the Harvard system".  I adopt Vancouver because it uses numbers rather than names.
 - Added `99-standalone.tex` file, for compilation of individual chapters, if your compile times are too long.
+- Added a declaration page `01-declaration`.
+- Added default background, related work, and conclusion chapters and sections.
