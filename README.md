@@ -119,6 +119,7 @@ I got used to using Overleaf during my PhD because it made collaborating with co
 However, thesis writing is a solo endeavour, and there are some things that Overleaf is not well suited for.
 For example, renaming or moving a large number of files at once is cumbersome and annoying on Overleaf.
 Fortunately all Overleaf projects are also `git` repos, so you should consider doing at least some tasks such as these locally.
+You also may find that Overleaf's IDE gets too slow when you have a large project.
 
 ###### Use a thesis-o-meter
 
