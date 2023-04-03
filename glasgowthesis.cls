@@ -36,6 +36,11 @@
 % Fonts.
 % Times New Roman for the body.
 \usepackage{times}
+% The guidelines state Arial for the headings. Really. Helvetica is
+% close enough.
+\usepackage{sectsty}
+\usepackage{helvet}
+\allsectionsfont{\sffamily}
 
 % Set paragraph layout.
 \setlength{\parindent}{0pt}
