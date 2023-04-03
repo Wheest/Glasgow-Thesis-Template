@@ -71,7 +71,7 @@
 {\end{list}}
 
 \newcommand{\note}[1]{\emph{\textbf{Note:}[#1]}}
-\makeglossaries
+\input{00-boilerplate/01-glossary}
 
 % =============================================================================
 \begin{document}
@@ -133,6 +133,9 @@
 \listoftables
 \listoffigures
 
+\clearpage
+\printglossary[title=Glossary, toctitle=Glossary]
+\printglossary[type=\acronymtype]
 % -----------------------------------------------------------------------------
 \cleardoublepage
 % Reset page numbering
