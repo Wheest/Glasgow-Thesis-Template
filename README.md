@@ -99,6 +99,7 @@ My workflow is Overleaf based, so I don't need the makefile, YMMV.  On Overleaf,
 - Added a declaration page `01-declaration`.
 - Added default background, related work, and conclusion chapters and sections.
 - Changed default rendering style to `nogutter`, since the digital version is King now.
+- Added an optional glossary
 
 ### Some PG-Tips
 
