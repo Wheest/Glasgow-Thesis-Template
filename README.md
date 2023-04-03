@@ -25,7 +25,8 @@ sdstrowes@gmail.com
   <ol>
     <li><a href="#notes-from-the-original-repo">Notes from the original repo</a></li>
     <li><a href="#fork-notes">Fork notes</a></li>
-    <li><a href="#changelog">Changlog</a></li>
+    <li><a href="#changelog">Changelog</a></li>
+    <li><a href="#some-pg-tips">Some PG-Tips</a></li>
   </ol>
 </details>
 
@@ -89,10 +90,24 @@ You can get this document [here from the BSI Group](https://landingpage.bsigroup
 My workflow is Overleaf based, so I don't need the makefile, YMMV.  On Overleaf, ensure your main file is `00-main.tex`
 
 <!-- Changelog -->
-### Changelog:
+### Changelog
 - Made new main file `00-main.tex` (numbered files are much easier to navigate, especially in a structured document).
+- Updated the default title, [let's not go mad](https://github.com/Wheest/Glasgow-Thesis-Template/commit/c1b3e5d71db15d19b9c3ba53b00922e7c88d2349#r107069334).
 - Removed sans-serif headings. There are no guidelines that I can find for CSE that say this is required, BS 5848:1980 does not mention this.  In addition, [the template given by CSE](https://www.gla.ac.uk/colleges/scienceengineering/graduateschool/postgraduateresearchstudy/submitthesis/) has serif headings.
 - Changed bibliography style from IEEEtran, as guidelines say "preferably following the Vancouver system or the Harvard system".  I adopt Vancouver because it uses numbers rather than names.
 - Added `99-standalone.tex` file, for compilation of individual chapters, if your compile times are too long.
 - Added a declaration page `01-declaration`.
 - Added default background, related work, and conclusion chapters and sections.
+- Changed default rendering style to `nogutter`, since the digital version is King now.
+
+### Some PG-Tips
+
+Here are some notes that may make writing your thesis easier, or improve the quality of your layout.
+
+###### Short-title for list of figures
+
+At the start of the thesis is a list of your figures.  By default this will take the full caption of your figure, which may be too verbose to have here.  You can define a short caption that will be used in the list of figures like this:
+
+``` tex
+\caption[Short version for LoF]{Long version to appear next to the figure}
+```
