@@ -94,7 +94,7 @@ My workflow is Overleaf based, so I don't need the makefile, YMMV.  On Overleaf,
 - Made new main file `00-main.tex` (numbered files are much easier to navigate, especially in a structured document).
 - Updated the default title, [let's not go mad](https://github.com/Wheest/Glasgow-Thesis-Template/commit/c1b3e5d71db15d19b9c3ba53b00922e7c88d2349#r107069334).
 - ~~Removed sans-serif headings. There are no guidelines that I can find for CSE that say this is required, BS 5848:1980 does not mention this.  In addition, [the template given by CSE](https://www.gla.ac.uk/colleges/scienceengineering/graduateschool/postgraduateresearchstudy/submitthesis/) has serif headings.~~ Reverted this change, as I decided I liked the default more.  You can edit this under the [`% Fonts.` section of `glasgowthesis.cls`](https://github.com/Wheest/Glasgow-Thesis-Template/blob/pg-tweaks/glasgowthesis.cls#L36).
-- Changed bibliography style from IEEEtran, as guidelines say "preferably following the Vancouver system or the Harvard system".  I adopt Vancouver because it uses numbers rather than names.
+- ~~Changed bibliography style from IEEEtran, as guidelines say "preferably following the Vancouver system or the Harvard system".  I adopt Vancouver because it uses numbers rather than names.~~ I transitioned the template to use `biblatex`, which gives us more features.  By default we now have an alphabetic cite style.
 - Added `99-standalone.tex` file, for compilation of individual chapters, if your compile times are too long.
 - Added a declaration page `01-declaration`.
 - Added default background, related work, and conclusion chapters and sections.

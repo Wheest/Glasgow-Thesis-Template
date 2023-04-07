@@ -16,8 +16,9 @@
 \usepackage{amssymb}
 \usepackage{bookmark}
 \usepackage[acronym]{glossaries}
-
-%\usepackage{natbib}
+\usepackage[citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\DeclareUnicodeCharacter{0301}{\'{e}} % biblatex can sometimes have issues with accents
+\addbibresource{99-bibliography/dissertation.bib}
 
 \usepackage{color}
 \usepackage{changebar}
