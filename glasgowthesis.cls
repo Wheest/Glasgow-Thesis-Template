@@ -183,8 +183,7 @@
 \usepackage{titlesec, blindtext, color}
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{$\vert$}\hsp}{0pt}{\Huge\bfseries}
-
+\titleformat{\chapter}[hang]{\Huge\bfseries\sffamily}{\thechapter\hsp\textcolor{gray75}{$\vert$}\hsp}{0pt}{\Huge\bfseries\sffamily}
 % \newenvironment{codelisting}
 % {\begin{list}{}{\setlength{\leftmargin}{1em}}\item\scriptsize\bfseries}
 % {\end{list}}
