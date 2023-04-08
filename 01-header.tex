@@ -20,6 +20,12 @@
 \DeclareUnicodeCharacter{0301}{\'{e}} % biblatex can sometimes have issues with accents
 \addbibresource{99-bibliography/dissertation.bib}
 
+% for code listings
+\usepackage{listings}
+\usepackage{minted}
+\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{} % this centers minted envs by default, see https://tex.stackexchange.com/questions/161124/how-to-make-a-minted-code-listing-centered-on-a-page/161128#161128
+
+
 \usepackage{color}
 \usepackage{changebar}
 \usepackage{soul}
