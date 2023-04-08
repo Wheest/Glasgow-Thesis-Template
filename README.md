@@ -12,23 +12,45 @@
   </p>
 </div>
 
-Forked from:
-
-<https://github.com/sdstrowes/Glasgow-Thesis-Template>
-Stephen D. Strowes, 2011.
-sdstrowes@gmail.com
-
+Originally forked from: [sdstrowes/Glasgow-Thesis-Template](https://github.com/sdstrowes/Glasgow-Thesis-Template), Stephen D. Strowes, cheers!
 
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#notes-from-the-original-repo">Notes from the original repo</a></li>
     <li><a href="#fork-notes">Fork notes</a></li>
     <li><a href="#changelog">Changelog</a></li>
+    <li><a href="#notes-from-the-original-repo">Notes from the original repo</a></li>
     <li><a href="#some-pg-tips">Some PG-Tips</a></li>
   </ol>
 </details>
+
+
+<!-- Fork notes -->
+### Fork notes
+
+The latest thesis guidelines I have from the College of Science & Engineering say that:
+
+> The layout and binding of the thesis should generally conform to the British Standards Institution's “Recommendations for the Presentation of Theses and Dissertations” (BS 4821:1990), but figures and tables may be produced on separate pages or embedded in the body of the text.
+
+You can get this document [here from the BSI Group](https://landingpage.bsigroup.com/LandingPage/Standard?UPI=000000000000216017).  You may need to login with your institution to access it.  Note that at time of writing their website did not work on Firefox, I reported the bug on 2023-04-01.  The digital version was also described "Withdrawn" when I attempted to access it.  I could download a PDF, but it was password protected.  Opening it in "Quick View" appeared to work.
+
+My workflow is Overleaf based, so I don't need the makefile, YMMV.  On Overleaf, ensure your main file is `00-main.tex`
+
+<!-- Changelog -->
+### Changelog
+- Made new main file `00-main.tex` (numbered files are much easier to navigate, especially in a structured document).
+- Updated the default title, [let's not go mad](https://github.com/Wheest/Glasgow-Thesis-Template/commit/c1b3e5d71db15d19b9c3ba53b00922e7c88d2349#r107069334).
+- ~~Removed sans-serif headings. There are no guidelines that I can find for CSE that say this is required, BS 5848:1980 does not mention this.  In addition, [the template given by CSE](https://www.gla.ac.uk/colleges/scienceengineering/graduateschool/postgraduateresearchstudy/submitthesis/) has serif headings.~~ Reverted this change, as I decided I liked the default more.  You can edit this under the [`% Fonts.` section of `glasgowthesis.cls`](https://github.com/Wheest/Glasgow-Thesis-Template/blob/pg-tweaks/glasgowthesis.cls#L36).
+- ~~Changed bibliography style from IEEEtran, as guidelines say "preferably following the Vancouver system or the Harvard system".  I adopt Vancouver because it uses numbers rather than names.~~ I transitioned the template to use `biblatex`, which gives us more features.  By default we now have an alphabetic cite style.
+- Added `99-standalone.tex` file, for compilation of individual chapters, if your compile times are too long.
+- Added a declaration page `01-declaration`.
+- Added default background, related work, and conclusion chapters and sections.
+- Changed default rendering style to `nogutter`, since the digital version is King now.
+- Added an optional glossary.
+- Added an example code listing using the `minted` package.
+- Added a custom chapter header style.
+
 
 <!-- ORIGINAL NOTES -->
 ### Notes from the original repo
@@ -78,36 +100,12 @@ http://tex.stackexchange.com/questions/10134/ for why.)
 
 There will be bugs, there will be errors. Please feed them back!
 
-<!-- Fork notes -->
-### Fork notes
-
-The latest thesis guidelines I have from the College of Science & Engineering say that:
-
-> The layout and binding of the thesis should generally conform to the British Standards Institution's “Recommendations for the Presentation of Theses and Dissertations” (BS 4821:1990), but figures and tables may be produced on separate pages or embedded in the body of the text.
-
-You can get this document [here from the BSI Group](https://landingpage.bsigroup.com/LandingPage/Standard?UPI=000000000000216017).  You may need to login with your institution to access it.  Note that at time of writing their website did not work on Firefox, I reported the bug on 2023-04-01.  The digital version was also described "Withdrawn" when I attempted to access it.  I could download a PDF, but it was password protected.  Opening it in "Quick View" appeared to work.
-
-My workflow is Overleaf based, so I don't need the makefile, YMMV.  On Overleaf, ensure your main file is `00-main.tex`
-
-<!-- Changelog -->
-### Changelog
-- Made new main file `00-main.tex` (numbered files are much easier to navigate, especially in a structured document).
-- Updated the default title, [let's not go mad](https://github.com/Wheest/Glasgow-Thesis-Template/commit/c1b3e5d71db15d19b9c3ba53b00922e7c88d2349#r107069334).
-- ~~Removed sans-serif headings. There are no guidelines that I can find for CSE that say this is required, BS 5848:1980 does not mention this.  In addition, [the template given by CSE](https://www.gla.ac.uk/colleges/scienceengineering/graduateschool/postgraduateresearchstudy/submitthesis/) has serif headings.~~ Reverted this change, as I decided I liked the default more.  You can edit this under the [`% Fonts.` section of `glasgowthesis.cls`](https://github.com/Wheest/Glasgow-Thesis-Template/blob/pg-tweaks/glasgowthesis.cls#L36).
-- ~~Changed bibliography style from IEEEtran, as guidelines say "preferably following the Vancouver system or the Harvard system".  I adopt Vancouver because it uses numbers rather than names.~~ I transitioned the template to use `biblatex`, which gives us more features.  By default we now have an alphabetic cite style.
-- Added `99-standalone.tex` file, for compilation of individual chapters, if your compile times are too long.
-- Added a declaration page `01-declaration`.
-- Added default background, related work, and conclusion chapters and sections.
-- Changed default rendering style to `nogutter`, since the digital version is King now.
-- Added an optional glossary.
-- Added an example code listing using the `minted` package.
-- Added a custom chapter header style.
 
 ### Some PG-Tips
 
 Here are some notes that may make writing your thesis easier, or improve the quality of your layout.
 
-###### Short-title for list of figures
+#### Short-title for list of figures
 
 At the start of the thesis is a list of your figures.  By default this will take the full caption of your figure, which may be too verbose to have here.  You can define a short caption that will be used in the list of figures like this:
 
@@ -115,7 +113,7 @@ At the start of the thesis is a list of your figures.  By default this will take
 \caption[Short version for LoF]{Long version to appear next to the figure}
 ```
 
-###### Consider at least a semi-local workflow
+#### Consider at least a semi-local workflow
 
 I got used to using Overleaf during my PhD because it made collaborating with co-authors much easier.
 However, thesis writing is a solo endeavour, and there are some things that Overleaf is not well suited for.
@@ -125,7 +123,21 @@ Other issues include: grepping and find-and-replace across files is not well sup
 Fortunately all Overleaf projects are also `git` repos, so you should consider doing at least some tasks such as these locally.
 You also may find that Overleaf's IDE gets too slow when you have a large project.
 
-###### Use a thesis-o-meter
+#### Use a thesis-o-meter
 
 To keep motivated and track your progress, consider using a thesis-o-meter, which will track how you thesis is changing over time.
 I developed and open sourced one [available here](https://github.com/Wheest/thesis-o-meter).
+
+#### Use the bibfile from your reference manager
+
+Each paper you wrote will probably have its own bibfile, potentially with references provided by several co-authors.
+The formatting may not be consistent, and you may have a bunch of arXiv papers in there that may now be published papers (congrats to them!).
+Additionally, when you combine papers, you may have multiple references for the same paper, with different cite keys.
+
+Personally, I would recommend making the main bibfile of you thesis the export from your reference manager (e.g., Mendeley, or [Zotero](https://www.zotero.org/) with the [Better Bibtex extension](https://github.com/retorquere/zotero-better-bibtex)).
+
+When you compile your thesis, you'll get loads of warnings about undefined citations etc.
+You can use project-wide find-and-replace to update these.
+That being said, your reference manager may not be perfect either, you could have duplicates or arXiv papers in there.
+Therefore I've got a wee tool that may help you: (https://github.com/Wheest/bib-boi)[https://github.com/Wheest/bib-boi].
+Getting your references in a good state may take a while, but its a good task to do if you're not feeling in one day.
