@@ -1,0 +1,28 @@
+\begin{listing}[!ht]
+  \centering
+\begin{minted}[fontsize=\footnotesize]{python}
+import torch
+
+class WeeNet(torch.nn.Module):
+    def __init__(
+        self, in_c: int, out_c: int, kdim: int, stride: int, pad: int
+    ):
+        super(WeeNet, self).__init__()
+        self.layer1 = torch.nn.Conv2d(
+            in_c,
+            out_c,
+            kernel_size=(kdim, kdim),
+            stride=(stride, stride),
+            padding=(pad, pad),
+        )
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        out = torch.nn.functional.relu(self.layer1(x))
+        return out
+
+model = WeeNet(*args) # initialize model
+y = model(x) # run inference using input data x
+\end{minted}
+\caption{Simple DNN definition in PyTorch}
+\label{lst:model:weenet}
+\end{listing}

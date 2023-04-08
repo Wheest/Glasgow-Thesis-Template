@@ -99,7 +99,9 @@ My workflow is Overleaf based, so I don't need the makefile, YMMV.  On Overleaf,
 - Added a declaration page `01-declaration`.
 - Added default background, related work, and conclusion chapters and sections.
 - Changed default rendering style to `nogutter`, since the digital version is King now.
-- Added an optional glossary
+- Added an optional glossary.
+- Added an example code listing using the `minted` package.
+- Added a custom chapter header style.
 
 ### Some PG-Tips
 
@@ -118,6 +120,8 @@ At the start of the thesis is a list of your figures.  By default this will take
 I got used to using Overleaf during my PhD because it made collaborating with co-authors much easier.
 However, thesis writing is a solo endeavour, and there are some things that Overleaf is not well suited for.
 For example, renaming or moving a large number of files at once is cumbersome and annoying on Overleaf.
+Other issues include: grepping and find-and-replace across files is not well supported, and quickly switching between files is not well supported.
+
 Fortunately all Overleaf projects are also `git` repos, so you should consider doing at least some tasks such as these locally.
 You also may find that Overleaf's IDE gets too slow when you have a large project.
 

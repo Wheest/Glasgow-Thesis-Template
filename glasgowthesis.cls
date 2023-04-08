@@ -177,7 +177,13 @@
   \global\let\and\relax
 }
 
-
+% custom chapter header style
+% see https://texblog.org/2012/07/03/fancy-latex-chapter-styles/
+% for more, or comment out this block for more
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{$\vert$}\hsp}{0pt}{\Huge\bfseries}
 
 % \newenvironment{codelisting}
 % {\begin{list}{}{\setlength{\leftmargin}{1em}}\item\scriptsize\bfseries}
