@@ -20,6 +20,10 @@
 \DeclareUnicodeCharacter{0301}{\'{e}} % biblatex can sometimes have issues with accents
 \addbibresource{99-bibliography/dissertation.bib}
 
+\AtEveryBibitem{ % removes 'Visted On' from bibliography entries
+    \clearfield{urlyear}
+    \clearfield{urlmonth}
+}
 % for code listings
 \usepackage{listings}
 \usepackage{minted}
@@ -139,10 +143,6 @@
 \tableofcontents
 \listoftables
 \listoffigures
-
-\clearpage
-\printglossary[title=Glossary, toctitle=Glossary]
-\printglossary[type=\acronymtype]
 % -----------------------------------------------------------------------------
 \cleardoublepage
 % Reset page numbering

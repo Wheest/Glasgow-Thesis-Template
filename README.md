@@ -123,6 +123,10 @@ Other issues include: grepping and find-and-replace across files is not well sup
 Fortunately all Overleaf projects are also `git` repos, so you should consider doing at least some tasks such as these locally.
 You also may find that Overleaf's IDE gets too slow when you have a large project.
 
+Another advantage I found is that one can integrate grammar tools to suggest better ways of wording things.
+I found the [LTeX Language server](https://github.com/valentjn/ltex-ls), which does this for LaTeX projects.
+There's a plugin for [Emacs](https://github.com/emacs-languagetool/lsp-ltex), as well as other IDEs, thanks LSP.
+
 #### Use a thesis-o-meter
 
 To keep motivated and track your progress, consider using a thesis-o-meter, which will track how you thesis is changing over time.
@@ -141,3 +145,19 @@ You can use project-wide find-and-replace to update these.
 That being said, your reference manager may not be perfect either, you could have duplicates or arXiv papers in there.
 Therefore I've got a wee tool that may help you: (https://github.com/Wheest/bib-boi)[https://github.com/Wheest/bib-boi].
 Getting your references in a good state may take a while, but its a good task to do if you're not feeling in one day.
+
+#### Use ChkTeX
+
+Built in linters and error checkers for LaTeX from Overleaf and other IDEs.
+But sometimes you should check everything yourself.
+The [ChkTeX](https://www.nongnu.org/chktex/) is a battle-harden tool for identifying common typographic errors in your LaTeX project, for example not having a `~` before a `\cite`, or using an `x`` instead of $\times$.
+
+It can be integrated into Emacs AUCTeX, however can also be run from the command line.
+An example invocation is:
+
+``` tex
+chktex -I $MAIN_FILE --output chktex_output.txt
+```
+
+Where `-I` includes all the subfiles that we include with `\input`, and `--output chktex_output.txt` saves the output to a file that you can check at your leisure.
+Running with `-W` will turn on all warnings, but will likely be quite pedantic and trigger some false positives.
