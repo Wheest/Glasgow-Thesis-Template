@@ -14,6 +14,9 @@
 
 Originally forked from: [sdstrowes/Glasgow-Thesis-Template](https://github.com/sdstrowes/Glasgow-Thesis-Template), Stephen D. Strowes, cheers!
 
+This LaTeX template provides a starting point for CS PhD thesis writing, mostly following the CSE guidelines.
+A log of the changes made is given in this README, as well as some comments made during my writing that might help out if you're doing some thesis writing of your own using this or a similar template.
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -39,21 +42,25 @@ My workflow is Overleaf based, so I don't need the makefile, YMMV.  On Overleaf,
 
 <!-- Changelog -->
 ### Changelog
-- Made new main file `00-main.tex` (numbered files are much easier to navigate, especially in a structured document).
+- Made new main file `00-main.tex` (numbered files are much easier to navigate, especially in a structured document), with chapters included in the `01-chapters.tex` file.
 - Updated the default title, [let's not go mad](https://github.com/Wheest/Glasgow-Thesis-Template/commit/c1b3e5d71db15d19b9c3ba53b00922e7c88d2349#r107069334).
 - ~~Removed sans-serif headings. There are no guidelines that I can find for CSE that say this is required, BS 5848:1980 does not mention this.  In addition, [the template given by CSE](https://www.gla.ac.uk/colleges/scienceengineering/graduateschool/postgraduateresearchstudy/submitthesis/) has serif headings.~~ Reverted this change, as I decided I liked the default more.  You can edit this under the [`% Fonts.` section of `glasgowthesis.cls`](https://github.com/Wheest/Glasgow-Thesis-Template/blob/pg-tweaks/glasgowthesis.cls#L36).
 - ~~Changed bibliography style from IEEEtran, as guidelines say "preferably following the Vancouver system or the Harvard system".  I adopt Vancouver because it uses numbers rather than names.~~ I transitioned the template to use `biblatex`, which gives us more features.  By default we now have an alphabetic cite style.
 - Added `99-standalone.tex` file, for compilation of individual chapters, if your compile times are too long.
 - Added a declaration page `01-declaration`.
 - Added default background, related work, and conclusion chapters and sections.
-- Changed default rendering style to `nogutter`, since the digital version is King now.
+- Changed default rendering style to `nogutter`, since the digital version is ~~King~~ Big Lad now.
 - Added an optional glossary.
 - Added an example code listing using the `minted` package.
-- Added a custom chapter header style.
+- Added a custom chapter header style ("1 | Chapter Name", instead of "Chapter 1\n Chapter Name") See the relevant section in [glasgowthesis.cls](glasgowthesis.cls).
+- Added a `\printpublication` command that prints all the authors, rather than `\fullcite`.  This is handy for complimentary publications.
 
 
 <!-- ORIGINAL NOTES -->
 ### Notes from the original repo
+
+> note, not all of these comments may be relevant anymore.
+> the original repo is available [@sdstrowes/Glasgow-Thesis-Template](https://github.com/sdstrowes/Glasgow-Thesis-Template)
 
 The original template was built to follow the style guidelines presented in:
  http://www.lib.gla.ac.uk/enlighten/theses/Thesis%20preparation%20guidelines.pdf
@@ -161,3 +168,11 @@ chktex -I $MAIN_FILE --output chktex_output.txt
 
 Where `-I` includes all the subfiles that we include with `\input`, and `--output chktex_output.txt` saves the output to a file that you can check at your leisure.
 Running with `-W` will turn on all warnings, but will likely be quite pedantic and trigger some false positives.
+
+#### Have each sentence as a new line
+
+LaTeX is not a WYSIWYG word processor, and if you have each sentence on a new line, it will still be combined into a single paragraph.
+But why do this?
+Well, first it makes it easier to comment out blocks of text, since you can have individual sentences commented out, without having to replicate sentences you are keeping (or manually break them up).
+Secondly, it is much cleaner from a version-control perspective.
+Tools like Overleaf use `git`, and it is easier to see what has changed between versions if we go line-by-line.
