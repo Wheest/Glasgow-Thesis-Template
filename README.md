@@ -54,7 +54,7 @@ My workflow is Overleaf based, so I don't need the makefile, YMMV.  On Overleaf,
 - Added an example code listing using the `minted` package.
 - Added a custom chapter header style ("1 | Chapter Name", instead of "Chapter 1\n Chapter Name") See the relevant section in [glasgowthesis.cls](glasgowthesis.cls).
 - Added a `\printpublication` command that prints all the authors, rather than `\fullcite`.  This is handy for complimentary publications.
-
+- Added a `sidewaystable` to show how large figures and tables can be rotated if they are too large: there is no space limit in a thesis, make things as big as they need to be.
 
 <!-- ORIGINAL NOTES -->
 ### Notes from the original repo
