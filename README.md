@@ -146,12 +146,17 @@ The formatting may not be consistent, and you may have a bunch of arXiv papers i
 Additionally, when you combine papers, you may have multiple references for the same paper, with different cite keys.
 
 Personally, I would recommend making the main bibfile of you thesis the export from your reference manager (e.g., Mendeley, or [Zotero](https://www.zotero.org/) with the [Better Bibtex extension](https://github.com/retorquere/zotero-better-bibtex)).
+For the Better Bibtex extension, make sure you enable exports of URLs.
 
 When you compile your thesis, you'll get loads of warnings about undefined citations etc.
 You can use project-wide find-and-replace to update these.
 That being said, your reference manager may not be perfect either, you could have duplicates or arXiv papers in there.
 Therefore I've got a wee tool that may help you: (https://github.com/Wheest/bib-boi)[https://github.com/Wheest/bib-boi].
 Getting your references in a good state may take a while, but its a good task to do if you're not feeling in one day.
+
+You may find that some bibliography entries are ignoring your margin rules.
+As a final solution, enclose your `\printbibliography` in a `\begin{sloppypar}` environment.
+But first try including packages such as `hyperref` and `xurl`.
 
 #### Use ChkTeX
 

@@ -26,7 +26,19 @@
     \clearfield{urlyear}
     \clearfield{urlmonth}
   }
-\newcommand{\printpublication}[1]{\AtNextCite{\defcounter{maxnames}{99}}\fullcite{#1}} % prints all authors for the publications listing, see https://tex.stackexchange.com/questions/126226/how-do-i-instruct-fullcite-to-use-maxbibnames-rather-than-maxcitenames/267089#267089
+  \newcommand{\printpublication}[1]{\AtNextCite{\defcounter{maxnames}{99}}\fullcite{#1}} % prints all authors for the publications listing, see https://tex.stackexchange.com/questions/126226/how-do-i-instruct-fullcite-to-use-maxbibnames-rather-than-maxcitenames/267089#267089
+
+% remove editors
+\renewbibmacro*{byeditor+others}{}
+
+% only print URL if DOI is missing
+\renewbibmacro*{url+urldate}{
+  \iffieldundef{doi}{
+    % \printunit{The URL of this document is \space}%
+    \usebibmacro{url}\newunit%
+    \usebibmacro{urldate}\newunit%
+  }{}
+}
 
 % for code listings
 \usepackage{listings}
