@@ -18,7 +18,19 @@
 \usepackage{rotating}
 
 \usepackage[acronym]{glossaries}
-\usepackage[citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\usepackage[citestyle=alphabetic,
+bibstyle=authortitle,
+maxcitenames=2,       % Change this to the desired number of authors
+maxbibnames=2,
+  backend=biber,
+  style=alphabetic,
+  sortcites=true,
+  block=none,
+  indexing=false,
+  citereset=none,
+  natbib=true,
+]{biblatex}
+
 \DeclareUnicodeCharacter{0301}{\'{e}} % biblatex can sometimes have issues with accents
 \addbibresource{99-bibliography/dissertation.bib}
 
